@@ -1,22 +1,20 @@
 # Makes the tic-tac-toe program
 # creates the executable "ttt"
-# Uses ttt.C : the board object
+# Uses board.cpp : the board object
 # the main program logic and user interface is playttt.C
-# this is a c++ program, so use capital C file extensions
-# T. Barake  03/1995   v.0.0
 #
 
 CXX = g++
 CXXFLAGS = -Wall -g -std=c++17
 
 ttt: playttt.o board.o 
-	$(CXX) $(CXXFLAGS) playttt.o board.o -o ttt
+	$(CXX) $(CXXFLAGS) build/playttt.o build/board.o -o build/ttt
 
-playttt.o: playttt.cpp board.h
-	$(CXX) $(CXXFLAGS) -c playttt.cpp
+playttt.o: src/playttt.cpp src/board.h
+	$(CXX) $(CXXFLAGS) -c src/playttt.cpp
 
-board.o: board.cpp board.h
-	$(CXX) $(CXXFLAGS) -c board.cpp
+board.o: src/board.cpp src/board.h
+	$(CXX) $(CXXFLAGS) -c src/board.cpp
 
 clean:
-	rm -f *.o ttt
+	rm -f build/*.o build/ttt
