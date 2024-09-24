@@ -6,6 +6,7 @@
 //#include <conio.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <cmath>
 #define X -1
 #define O  1
 
@@ -19,12 +20,12 @@ class ttt
 public:
 	ttt(void);
 	void display(bool dummy=false);	// display board message
-	bool legal(int move);	// is move legal ?
+	bool legal(int move);			// is move legal ?
 	bool play(int move, int type);	// play a move
 	int win();              		// has someone won?
 	int depth;						// how many moves have been played?
 	int maxmoves;					// maximum moves to search
 
-private:
-	short int board[RSIZE][RSIZE];				// array representing board
+
+	int board[RSIZE][RSIZE];		// array representing board
 };

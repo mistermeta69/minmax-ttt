@@ -5,9 +5,9 @@
 #
 
 CXX = g++
-CXXFLAGS = -Wall -g -std=c++17
+CXXFLAGS = -Wall -g -std=c++11
 
-ttt: playttt.o board.o 
+ttt: build/playttt.o build/board.o 
 	$(CXX) $(CXXFLAGS) build/playttt.o build/board.o -o build/ttt
 
 playttt.o: src/playttt.cpp src/board.h
